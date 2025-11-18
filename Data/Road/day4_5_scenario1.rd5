@@ -1,0 +1,45 @@
+#INFOFILE1.1 (UTF-8) - Do not remove this line!
+FileIdent = IPGRoad 14.0
+FileCreator = CarMaker Office 14.0.1
+LibVersion = 14.0.1
+Country = DEU
+nLinks = 1
+nJunctions = 0
+nObjects = 28
+nRoutes = 1
+RoadNetworkLength = 100
+BBox = -10.0651172951907 110.949176359302 -112.5 17.9299441917336 -11 11
+Route.0.Length = 100
+RST.Unit = kmh
+RST = 50 100 130 30 70 30 0 -1
+Movie = 0.2 1 0.01 1.5 1.5 1 1
+Visualization.SamplingParams = 0.2 1 0.01
+Visualization.RoadsideWidth = 1.5 1.5
+Visualization.RoadsideSlope = 1 1
+Visualization.MovieNX.RenderMask = 4095
+PathMode = -1
+Terrain.Param = 50 25 300 100 0.75 0
+Link.0.ID = 0
+Link.0.Node0 = 0 0 0 0
+Link.0.Node1 = 100 0 0 0
+Link.0.RST = Countryroad
+Link.0.RL.ID = 1
+Link.0.Seg.0.ID = 5
+Link.0.Seg.0.Type = Straight
+Link.0.Seg.0.Param = 100 0 0 0 0 0 0 0
+Link.0.LaneSection.0.ID = 6
+Link.0.LaneSection.0.Start = 0
+Link.0.LaneSection.0.LaneL.0.ID = 24
+Link.0.LaneSection.0.LaneL.0 = 0 2.5 2.5 5 0 0 0
+Link.0.LaneSection.0.LaneR.0.ID = 25
+Link.0.LaneSection.0.LaneR.0 = 0 100 100 0 0 0 0
+Link.0.LaneSection.0.LaneR.0.ARP = 26 27 28 29 30 31
+Link.0.LaneSection.0.LaneR.1.ID = 42
+Link.0.LaneSection.0.LaneR.1 = 0 2.5 2.5 5 0 0 0
+LanePath.0 = 32 25 2 10 0.1 0.1 -1 -1
+Route.0.ID = 7
+Route.0.Name = Route_0
+Route.0.DrvPath.ID = 8
+Route.0.DrvPath:
+	32
+MaxUsedObjId = 42

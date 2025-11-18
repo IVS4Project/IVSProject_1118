@@ -1,0 +1,43 @@
+# first include path has to be the include path of MakeDefs!!!
+
+include $(CM_DIR_MASKED)/include/MakeDefs.win64
+
+APP_VER = Car_Generic <insert.your.version.no>
+APP_NAME = CarMaker.$(ARCH)$(EXE_EXT)
+
+ifeq ($(DEBUG),true)
+	OPT_CFLAGS = -g -O1
+endif
+
+
+LD_LIBS = $(CAR_LIB) $(CARMAKER_LIB) $(DRIVER_LIB) $(ROAD_LIB) $(TIRE_LIB) $(MIO_LIB)
+OBJS_xeno =
+OBJS_linux =
+OBJS_win32 =
+
+OBJ_APP = ../app_tmp.o
+
+# Prepend local include/library directory to include path:
+# PREINC_CFLAGS +=		-I../../include -I../lib/$(ARCH) -I../../lib
+
+# Append local include/library directory to include path:
+# INC_CFLAGS +=		-I../../include -I../../lib/$(ARCH) -I../../lib
+
+
+### Linking with RTW-built Simulink models
+
+# @@PLUGIN-BEGIN-ECLIBS@@ - Automatically generated code - don't edit!
+# @@PLUGIN-END@@
+
+### END (Linking with RTW-built Simulink models)
+
+
+### EtherCAT
+#DEF_CFLAGS +=		-DEXAMPLE_ECAT
+
+### J1939 generator for CANdb files
+# J1939_DB = ../CANdb/J1939_Database.dbc
+# J1939_PARAM = J1939Parameters.MyName
+# J1939_OD = ../Data/Config /*Output parameter files in this folder*/
+# J1939_FLAGS = -srvECU MyECU -outdir $(J1939_OD)
+### END (J1939 generator for CANdb files)

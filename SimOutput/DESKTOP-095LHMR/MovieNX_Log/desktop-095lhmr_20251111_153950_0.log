@@ -1,0 +1,35 @@
+
+
+SYSTEM_START	-	desktop-095lhmr	화 11 11 15:39:50 2025
+
+
+SYSTEM_INFO	Movie NX pro 14.1.1 2025-07-04
+Creating engine cache path: C:/Users/User/AppData/Local/cache/MovieNX/cache_141
+[Warning] Invalid configuration file for Creator "MovieNX". Perhaps the file was not yet created? Path: C:/Users/User/MovieNX/data/View/ViewSettings.cfg)
+APO: Successfully connected to: CarMaker 14.1.1 - Car_Generic @ DESKTOP-095LHMR(127.0.0.1):16748
+Using RenderSettingsProfile: RenderSettings_high.cfg -> template_high.render
+Loading Installed scripts...
+Loading User scripts...
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+Loaded Path Mapping with 0 mapped directories. Set CarMaker home dir to 'C:/IPG/carmaker/win64-14.1.1'
+Loading Test Run from path D:/IVS/Practice_sample/Data/TestRun/day1_scenario1
+ApoConnection: Disconnecting...
