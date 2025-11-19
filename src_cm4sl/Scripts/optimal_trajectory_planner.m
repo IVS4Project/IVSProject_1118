@@ -88,8 +88,8 @@ function coeff = quarticPoly(xi, vi, ai, vf, af, T)
 end
 
 function valid = checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, kappa, otherVehicles, centerLine)
-    V_MAX     = 50.0;
-    A_MAX     = 2.0;
+    V_MAX     = 30.0;
+    A_MAX     = 3.0;
     KAPPA_MAX = 2.0;
     COLL_DIST = 1.5;
     % 속도 제약
@@ -126,6 +126,7 @@ function valid = checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, 
     end
 
     valid = true;
+    disp(valid);
 end
 
 function cost = computeCost(s_jerk, d_jerk, T, di, sf_dot, df, TARGET_SPEED)
