@@ -59,7 +59,7 @@ trajCount = 1;
 
 for i = 1:3
     df = dList(i);
-    for j = 1:3
+    for j = 1:4
         T = TimeList(j);
 
         coeff_d = quinticPoly(di, di_dot, di_ddot, df, 0, 0, T);
@@ -231,9 +231,9 @@ function cost = computeCost(s_jerk, d_jerk, T, di, sf_dot, df, TARGET_SPEED)
     % 가중치
     K_J = 0.1;
     K_T = 0.1;
-    K_D = 1.0;
-    K_V = 1.0;
-    K_LAT = 1.0;
+    K_D = 2.0;
+    K_V = 0.1;
+    K_LAT = 2.0;
     K_LON = 1.0;
     
     J_lat = sum(d_jerk.^2);
