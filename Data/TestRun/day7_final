@@ -1,6 +1,6 @@
 #INFOFILE1.1 (UTF-8) - Do not remove this line!
 FileIdent = CarMaker-TestRun 14
-FileCreator = CarMaker Office 14.0.1
+FileCreator = CarMaker for Simulink 14.1.1
 Description:
 Vehicle = Kia_EV6
 Trailer =
@@ -39,6 +39,7 @@ DrivMan.Man.0.Transition.EndCond = end
 DrivMan.Man.0.Transition.SimultanStart = end
 DrivMan.Man.0.LatStep.0.Dyn = Step 0.0 0.0 1.0 abs 1
 DrivMan.Man.0.LatStep.0.SteerMode = Angle
+DrivMan.SpeedUnit = kmh
 Env.StartTime.Year = 2014
 Env.StartTime.Month = 7
 Env.StartTime.Day = 1
