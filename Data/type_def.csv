@@ -1,0 +1,16 @@
+BusName,ElementName,class,DataType,Min,Max,InitValue,Description
+
+ExampleBusSets,ExampleBus_1,struct,bus_ExampleBus,,,,
+bus_ExampleBus,ExampleSignal_1,numeric,uint8,0,5,0,Speed signal
+bus_ExampleBus,ExampleSignal_2,numeric,uint16,0,5,0,Angle signal
+bus_ExampleBus,ExampleSignal_3,numeric,single,0,5,0,Angle signal
+
+EgoVehicle,EgoVehicle,struct,busEgoVehicle,,,,
+busEgoVehicle,ego_X,numeric,single,-1000,1000,0,Ego vehicle X position
+busEgoVehicle,ego_Y,numeric,single,-1000,1000,0,Ego vehicle Y position
+busEgoVehicle,ego_YAW,numeric,single,-1000,1000,0,Ego vehicle YAW angle
+busEgoVehicle,ego_Speed,numeric,single,0,300,0,Ego vehicle speed
+busEgoVehicle,ego_Accel,numeric,single,0,200,0,Ego vehicle accel
+
+RouteData,MapData,struct,busMapData,,,,
+busRouteData,Route1,
