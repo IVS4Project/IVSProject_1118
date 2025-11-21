@@ -1,16 +1,42 @@
-BusName,ElementName,class,DataType,Min,Max,InitValue,Description
+BusName,ElementName,class,DataType,Dim,Min,Max,InitValue,Description
 
-ExampleBusSets,ExampleBus_1,struct,bus_ExampleBus,,,,
-bus_ExampleBus,ExampleSignal_1,numeric,uint8,0,5,0,Speed signal
-bus_ExampleBus,ExampleSignal_2,numeric,uint16,0,5,0,Angle signal
-bus_ExampleBus,ExampleSignal_3,numeric,single,0,5,0,Angle signal
+ExampleBusSets,ExampleBus_1,struct,bus_ExampleBus,,,,,
+bus_ExampleBus,ExampleSignal_1,numeric,uint8,1,0,5,0,Speed signal
+bus_ExampleBus,ExampleSignal_2,numeric,uint16,1,0,5,0,Angle signal
+bus_ExampleBus,ExampleSignal_3,numeric,single,1,0,5,0,Angle signal
 
-EgoVehicle,EgoVehicle,struct,busEgoVehicle,,,,
-busEgoVehicle,ego_X,numeric,single,-1000,1000,0,Ego vehicle X position
-busEgoVehicle,ego_Y,numeric,single,-1000,1000,0,Ego vehicle Y position
-busEgoVehicle,ego_YAW,numeric,single,-1000,1000,0,Ego vehicle YAW angle
-busEgoVehicle,ego_Speed,numeric,single,0,300,0,Ego vehicle speed
-busEgoVehicle,ego_Accel,numeric,single,0,200,0,Ego vehicle accel
+MissionInfo,MissionInfo,struct,busMissionInfo,,,,,
+busMissionInfo,missionState,numeric,uint8,1,0,255,0,Current mission state
+busMissionInfo,tollgateLaneNumber,numeric,uint8,1,0,255,0,High pass lane number
+busMissionInfo,parkingStartPos_X,numeric,single,1,-1000,1000,0,Parking start position X
+busMissionInfo,parkingStartPos_Y,numeric,single,1,-1000,1000,0,Parking start position Y
+busMissionInfo,parkingDestinationPos_X,numeric,single,1,-1000,1000,0,Parking destination position X
+busMissionInfo,parkingDestinationPos_Y,numeric,single,1,-1000,1000,0,Parking destination position Y
+busMissionInfo,parkingDestinationYaw,numeric,single,1,-1000,1000,0,Parking destination Yaw
+busMissionInfo,parkingMapBoundary_X1,numeric,single,1,-1000,1000,0,Parking map boundary X1
+busMissionInfo,parkingMapBoundary_Y1,numeric,single,1,-1000,1000,0,Parking map boundary Y1
+busMissionInfo,parkingMapBoundary_X2,numeric,single,1,-1000,1000,0,Parking map boundary X2
+busMissionInfo,parkingMapBoundary_Y2,numeric,single,1,-1000,1000,0,Parking map boundary Y2
+busMissionInfo,parkingMapBoundary_X3,numeric,single,1,-1000,1000,0,Parking map boundary X1
+busMissionInfo,parkingMapBoundary_Y3,numeric,single,1,-1000,1000,0,Parking map boundary Y3
+busMissionInfo,parkingMapBoundary_X4,numeric,single,1,-1000,1000,0,Parking map boundary X4
+busMissionInfo,parkingMapBoundary_Y4,numeric,single,1,-1000,1000,0,Parking map boundary Y4
 
-RouteData,MapData,struct,busMapData,,,,
+CurrentLaneInfo,CurrentLaneInfo,struct,busCurrentLaneInfo,,,,,
+busCurrentLaneInfo,lane_Idx,numeric,uint8,1,0,255,0,Current lane number
+busCurrentLaneInfo,lane_Coeff,numeric,single,4,-1000,1000,0,Lane polytfit coefficient [c0 c1 c2 c3]
+busCurrentLaneInfo,lane_waypoints,numeric,single,300,-1000,1000,0,Ego history array
+busCurrentLaneInfo,lane_waypoints_Length,numeric,uint16,1,0,300,0,Actual valid length
+busCurrentLaneInfo,lookAheadDistance,numeric,single,1,0,100,0,Look ahead distance
+busCurrentLaneInfo,y_lookAheadDistance,numeric,single,1,0,100,0,Lateral offset when x is Look ahead distance
+
+
+EgoVehicle,EgoVehicle,struct,busEgoVehicle,,,,,
+busEgoVehicle,ego_X,numeric,single,1,-1000,1000,0,Ego vehicle X position
+busEgoVehicle,ego_Y,numeric,single,1,-1000,1000,0,Ego vehicle Y position
+busEgoVehicle,ego_YAW,numeric,single,1,-1000,1000,0,Ego vehicle YAW angle
+busEgoVehicle,ego_Speed,numeric,single,1,0,300,0,Ego vehicle speed
+busEgoVehicle,ego_Accel,numeric,single,1,0,200,0,Ego vehicle accel
+
+RouteData,MapData,struct,busMapData,,,,,
 busRouteData,Route1,

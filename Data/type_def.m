@@ -7,57 +7,84 @@ function type_def(csvFileName)
         matFileName = append(fileDir,'\','bus_init_structs.mat');
     end
     
-    % === Read CSV ===
+    %% === Read CSV ===
     opts = detectImportOptions(csvFileName, 'Delimiter', ',', 'NumHeaderLines', 0);
     opts.VariableNamesLine = 1;
     varNames = opts.VariableNames;
 
-    if ismember('InitValue', varNames)
-        varsToRead = {'BusName','ElementName','class','DataType','Min','Max','Description','InitValue'};
-        hasInitValue = true;
-    else
-        varsToRead = {'BusName','ElementName','class','DataType','Min','Max','Description'};
-        hasInitValue = false;
-    end
-
-    opts.SelectedVariableNames = varsToRead;
-    opts = setvartype(opts, varsToRead, 'char');
+    % We enforce the order: BusName,ElementName,class,DataType,Dim,Min,Max,InitValue,Description
+    expectedOrder = {'BusName','ElementName','class','DataType','Dim','Min','Max','InitValue','Description'};
+    presentVars = intersect(expectedOrder, varNames, 'stable');  
+    opts.SelectedVariableNames = presentVars;
+    opts = setvartype(opts, presentVars, 'char');
     data = readtable(csvFileName, opts);
 
-    % === Collect Bus info ===
-    busMap = containers.Map();
+    hasInitValue = ismember('InitValue', data.Properties.VariableNames);
+    hasDim      = ismember('Dim', data.Properties.VariableNames);
+
+    %% === Collect Bus info ===
+    busMap     = containers.Map();
     busInitMap = containers.Map();
 
     for i = 1:height(data)
         if strcmp(data.class{i}, 'numeric')
-            busName = data.BusName{i};
+            
             be = Simulink.BusElement;
-            be.Name = data.ElementName{i};
+            be.Name     = data.ElementName{i};
             be.DataType = data.DataType{i};
+            busName     = data.BusName{i};
+            
+            %% --- Parse Dimensions (NEW position: right after DataType) ---
+            if hasDim && ~isempty(data.Dim{i})
+                dimStr = strtrim(data.Dim{i});
+                
+                if contains(dimStr,'[')
+                    dimVal = str2num(dimStr); %#ok<ST2NM>
+                elseif contains(dimStr,' ')
+                    dimVal = str2num(dimStr); %#ok<ST2NM>
+                else
+                    dimVal = str2double(dimStr);
+                end
+                
+                if isempty(dimVal), dimVal = 1; end
+                be.Dimensions = dimVal;
+            else
+                be.Dimensions = 1;
+            end
+
+            %% --- Min/Max/Description ---
             if ~isempty(data.Min{i}), be.Min = str2double(data.Min{i}); end
             if ~isempty(data.Max{i}), be.Max = str2double(data.Max{i}); end
             if ~isempty(data.Description{i}), be.Description = data.Description{i}; end
 
+            %% --- InitValue ---
             if isKey(busInitMap, busName)
                 initStruct = busInitMap(busName);
             else
                 initStruct = struct();
             end
 
-            % Safe InitValue parsing
             if hasInitValue && ~isempty(data.InitValue{i})
                 try
-                    initValue = cast(str2double(data.InitValue{i}), data.DataType{i});
+                    baseVal = cast(str2double(data.InitValue{i}), data.DataType{i});
                 catch
-                    initValue = feval(data.DataType{i});
+                    baseVal = feval(data.DataType{i});
                 end
             else
-                initValue = feval(data.DataType{i});
+                baseVal = feval(data.DataType{i});
+            end
+
+            % dimension-aware default init
+            if numel(be.Dimensions) == 1
+                initValue = repmat(baseVal, be.Dimensions, 1);
+            else
+                initValue = repmat(baseVal, be.Dimensions);
             end
 
             initStruct.(be.Name) = initValue;
             busInitMap(busName) = initStruct;
 
+            %% --- Append element to bus ---
             if isKey(busMap, busName)
                 busMap(busName) = [busMap(busName), be];
             else
@@ -65,30 +92,31 @@ function type_def(csvFileName)
             end
         end
     end
-
-    % === Create Bus objects in base workspace ===
+    
+    %% === Create Bus objects ===
     busNames = keys(busMap);
     for i = 1:length(busNames)
-        busName = busNames{i};
         busObj = Simulink.Bus;
-        busObj.Elements = busMap(busName);
-        assignin('base', busName, busObj);
+        busObj.Elements = busMap(busNames{i});
+        assignin('base', busNames{i}, busObj);
     end
 
-    % === Create init structures and assign to workspace with init_ prefix ===
+    %% === Create init struct for each struct declaration ===
     initStructs = struct();
 
     for i = 1:height(data)
         if strcmp(data.class{i}, 'struct')
-            originalName = data.ElementName{i};     % e.g., ExampleBus_1
-            busType = data.DataType{i};             % e.g., bus_ExampleBus
-            varName = ['init_' originalName];       % e.g., init_ExampleBus_1
+            originalName = data.ElementName{i};
+            busType      = data.DataType{i};   % e.g. busMissionInfo
+            varName      = ['init_' originalName];
 
-            if evalin('base', sprintf('exist(''%s'', ''var'')', busType)) ~= 1
+            % bus 존재 여부 확인
+            if evalin('base', sprintf('exist(''%s'',''var'')', busType)) ~= 1
                 warning(['Bus type not found: ', busType]);
                 continue;
             end
 
+            % 기본 struct 생성
             try
                 defaultStruct = Simulink.Bus.createMATLABStruct(busType);
             catch ME
@@ -96,32 +124,21 @@ function type_def(csvFileName)
                 continue;
             end
 
+            % 사용자 정의 InitValue override
             if isKey(busInitMap, busType)
                 userInit = busInitMap(busType);
-                fields = fieldnames(userInit);
-                for f = 1:numel(fields)
-                    if isfield(defaultStruct, fields{f})
-                        defaultStruct.(fields{f}) = userInit.(fields{f});
-                    end
+                flds = fieldnames(userInit);
+                for f = 1:numel(flds)
+                    defaultStruct.(flds{f}) = userInit.(flds{f});
                 end
             end
 
-            % Fill empty/invalid fields
-            flds = fieldnames(defaultStruct);
-            for k = 1:numel(flds)
-                val = defaultStruct.(flds{k});
-                if isempty(val) || ~isnumeric(val)
-                    defaultStruct.(flds{k}) = 0;
-                end
-            end
-
-            % Save and assign with init_ prefix
             initStructs.(varName) = defaultStruct;
             assignin('base', varName, defaultStruct);
         end
     end
 
-    % === Save all init structures to .mat file ===
+    %% === Save .mat ===
     save(matFileName, '-struct', 'initStructs');
-    disp([' Saved init_ variables to .mat and assigned to base workspace: ', matFileName]);
+    disp(['Saved init_ variables to: ', matFileName]);
 end
