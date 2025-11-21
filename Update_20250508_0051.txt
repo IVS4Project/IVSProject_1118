@@ -1,0 +1,165 @@
+Logfile - Project update to CarMaker Office 14.0.1
+===============================================================================
+
+Start: 2025-05-08 00:51:33
+
+Cleaning up temporary files...
+  Deleting temporary Test Run, Vehicle and Trailer files
+  Deleting temporary files in road cache
+  >> Finished.
+
+Creating source code backup ...
+  src/.project
+  -  Info: Copied file to src/.project_20250508_0051
+  src/.settings/org.eclipse.cdt.core.prefs
+  -  Info: Copied file to src/.settings/org.eclipse.cdt.core_20250508_0051.prefs
+  src/CM_Main.c
+  -  Info: Copied file to src/CM_Main_20250508_0051.c
+  src/CM_Vehicle.c
+  -  Info: Copied file to src/CM_Vehicle_20250508_0051.c
+  src/CarMaker.props
+  -  Info: Copied file to src/CarMaker_20250508_0051.props
+  src/CarMaker.vcxproj
+  -  Info: Copied file to src/CarMaker_20250508_0051.vcxproj
+  src/CarMakerInstall.vcxproj
+  -  Info: Copied file to src/CarMakerInstall_20250508_0051.vcxproj
+  src/IO.c
+  -  Info: Copied file to src/IO_20250508_0051.c
+  src/IOVec.h
+  -  Info: Copied file to src/IOVec_20250508_0051.h
+  src/Makefile
+  -  Info: Copied file to src/Makefile_20250508_0051
+  src/User.c
+  -  Info: Copied file to src/User_20250508_0051.c
+  src/User.h
+  -  Info: Copied file to src/User_20250508_0051.h
+  src/app_tmp.c
+  -  Info: Copied file to src/app_tmp_20250508_0051.c
+  src/cmenv.m
+  -  Info: Copied file to src/cmenv_20250508_0051.m
+  src/makefile.defs
+  -  Info: Copied file to src/makefile_20250508_0051.defs
+  src/makefile.targets
+  -  Info: Copied file to src/makefile_20250508_0051.targets
+  src_cm4sl/.project
+  -  Info: Copied file to src_cm4sl/.project_20250508_0051
+  src_cm4sl/.settings/org.eclipse.cdt.core.prefs
+  -  Info: Copied file to src_cm4sl/.settings/org.eclipse.cdt.core_20250508_0051.prefs
+  src_cm4sl/CM_Main.c
+  -  Info: Copied file to src_cm4sl/CM_Main_20250508_0051.c
+  src_cm4sl/CM_Vehicle.c
+  -  Info: Copied file to src_cm4sl/CM_Vehicle_20250508_0051.c
+  src_cm4sl/IO.c
+  -  Info: Copied file to src_cm4sl/IO_20250508_0051.c
+  src_cm4sl/IOVec.h
+  -  Info: Copied file to src_cm4sl/IOVec_20250508_0051.h
+  src_cm4sl/Makefile
+  -  Info: Copied file to src_cm4sl/Makefile_20250508_0051
+  src_cm4sl/User.c
+  -  Info: Copied file to src_cm4sl/User_20250508_0051.c
+  src_cm4sl/User.h
+  -  Info: Copied file to src_cm4sl/User_20250508_0051.h
+  src_cm4sl/app_tmp.c
+  -  Info: Copied file to src_cm4sl/app_tmp_20250508_0051.c
+  src_cm4sl/cmenv.m
+  -  Info: Copied file to src_cm4sl/cmenv_20250508_0051.m
+  src_cm4sl/generic.mdl
+  -  Info: Copied file to src_cm4sl/generic_20250508_0051.mdl
+  src_cm4sl/makefile.defs
+  -  Info: Copied file to src_cm4sl/makefile_20250508_0051.defs
+  src_cm4sl/CarMaker for Simulink.props
+  -  Info: Copied file to src_cm4sl/CarMaker for Simulink_20250508_0051.props
+  src_cm4sl/CarMaker for Simulink.vcxproj
+  -  Info: Copied file to src_cm4sl/CarMaker for Simulink_20250508_0051.vcxproj
+  31 source code files have been copied
+  >> Finished.
+
+Deleting cached .node files of imported Movie NX assets...
+  0 Files deleted.
+  >> Finished.
+
+Deleting old unmodified template files...
+  0 Files deleted, 0 errors occurred
+  >> Finished.
+
+Copying new files to project directory...
+  100 Files copied, 0 errors occurred
+  >> Finished.
+
+Converting Simulink models...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting FMUs...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting Test Runs and TestSeries...
+  Data/TestRun/day1_scenario1
+  Data/TestRun/day1_scenario2
+  Data/TestRun/day1_scenario3
+  Data/TestRun/day1_scenario4
+  Data/TestRun/day2_scenario1
+  Data/TestRun/day2_scenario2
+  Data/TestRun/day2_scenario3
+  Data/TestRun/day2_scenario4
+  Data/TestRun/day2_scenario5
+  Data/TestRun/day3_scenario1
+  Data/TestRun/day3_scenario2
+  Data/TestRun/day4_5_scenario1
+  Data/TestRun/day6_scenario1
+  Data/TestRun/day7_final
+  14 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting IPGRoad files...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting Vehicle files...
+  Data/Vehicle/Kia_EV6
+  1 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting Trailer files...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting sensor material files...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting external sensor parametrization files...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting Tire files...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting configuration files...
+  Data/Config/OutputQuantities
+  -  Info: Quantity 'Sensor.Object.*' replaced by 'Sensor.Object.Vhcl.*'
+  Data/Config/OutputQuantities_Anim
+  -  Warning: Quantity 'Env.RainRate' removed
+  -  Info: Quantity 'Sensor.Camera.*' replaced by 'Sensor.Camera.Vhcl.*'
+  -  Info: Quantity 'Sensor.FSpace.*' replaced by 'Sensor.FSpace.Vhcl.*'
+  -  Info: Quantity 'Sensor.ObjByLane.*' replaced by 'Sensor.ObjByLane.Vhcl.*'
+  -  Info: Quantity 'Sensor.Object.*' replaced by 'Sensor.Object.Vhcl.*'
+  -  Info: Quantity 'Sensor.Radar.*' replaced by 'Sensor.Radar.Vhcl.*'
+  -  Info: Quantity 'Sensor.Road.*' replaced by 'Sensor.Road.Vhcl.*'
+  2 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting IO Configurations...
+  0 Files converted, 0 errors occurred
+  >> Finished.
+
+Converting Scenario Editor template files...
+  >> Finished.
+
+-------------------------------------------------------------------------------
+Update finished successfully. No errors occurred
+-------------------------------------------------------------------------------
+
+End: 2025-05-08 00:52:00

@@ -1,0 +1,16 @@
+#INFOFILE1.1 (UTF-8) - Do not remove this line!
+FileIdent = CarMaker-DVA 4.0
+nDialogQu = 10
+Qu.0.Name = AccelCtrl.DesiredAx
+Qu.0.Mode = - value
+Qu.0.Count = 1
+Qu.0.Unit = m/s²
+Qu.1.Name = Car.SlipAngleFL
+Qu.1.Mode = - value
+Qu.1.Count = 1
+Qu.1.Unit = rad
+Qu.2.Name = Car.SlipAngleRR
+Qu.2.Mode = - value
+Qu.2.Count = 1
+Qu.2.Unit = rad
+nQu = 3

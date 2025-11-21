@@ -1,0 +1,22 @@
+install: ../$(APP_NAME)
+	cd $(subst \,/,$(CWD))/..; $(INSTALL_APP) $(APP_NAME) $(ARCH)
+	
+../app_tmp.c: makefile $(OBJS_$(ARCH)) $(OBJS) $(LD_LIBS_MK)
+	$(QECHO) " MK     $@"
+	$Q $(CREATE_INFO_CMD)
+	
+flags := $(filter -D%,$(CFLAGS))
+macros := $(foreach flag,$(flags),$(subst =," ", $(subst -D,,$(flag))))
+macros:
+	-@ echo > ../.settings/macros
+	-@ for macro in $(macros); do echo >> ../.settings/macros \#define $$macro; done	
+
+#if defined(EXAMPLE_J1939)
+### J1939 rules
+j1939: $(J1939_OD)/$(J1939_PARAM)
+
+$(J1939_OD)/$(J1939_PARAM): $(J1939_DB)
+	$(J1939UTIL) $(J1939_FLAGS) \
+		-outfile $(J1939_PARAM) $<
+### END (J1939 rules)
+#endif

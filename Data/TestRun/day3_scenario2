@@ -1,0 +1,286 @@
+#INFOFILE1.1 (UTF-8) - Do not remove this line!
+FileIdent = CarMaker-TestRun 14
+FileCreator = CarMaker Office 14.0.1
+Description:
+Vehicle = Kia_EV6
+Trailer =
+Tire.0 =
+Tire.1 =
+Tire.2 =
+Tire.3 =
+Snapshot.TimeLimit =
+Snapshot.DistLimit =
+Road.FName = day3_scenario2.rd5
+Vehicle.DriverTemplate.FName = TestRun
+Vehicle.KnowledgeTemplate.Name =
+Vehicle.UserDriver.Long.FName =
+Vehicle.Routing.Type = Route
+Vehicle.Routing.ObjId = 7
+Vehicle.StartPos.Type = Route
+Vehicle.StartPos.ObjId = 7
+Vehicle.StartPos = 0.0 0.0
+Vehicle.StartPos.Orientation.Type = Relative
+Vehicle.StartPos.Orientation = 0.0
+DrivMan.nMan = 1
+DrivMan.Man.Start.Velocity = 18
+DrivMan.Man.Start.SteerAng = 0
+DrivMan.Man.Start.LaneOffset = -30
+DrivMan.Man.Start.OperatorActive = 1
+DrivMan.Man.Start.OperatorState = drive
+DrivMan.VhclOperator.Kind = IPGOperator 1
+DrivMan.SelectorCtrlMapping.Kind =
+DrivMan.Man.0.nLongSteps = 1
+DrivMan.Man.0.nLatSteps = 1
+DrivMan.Man.0.CombinedSteps = 1
+DrivMan.Man.0.MaxExec = 1
+DrivMan.Man.0.ConsiderDomain = own
+DrivMan.Man.0.Transition.Interrupt = self
+DrivMan.Man.0.Transition.EndCond = end
+DrivMan.Man.0.Transition.SimultanStart = end
+DrivMan.Man.0.LongStep.0.Dyn = VelControl 18 0.0 1.0 0 1 0
+DrivMan.Man.0.LatStep.0.Dyn = Step 0 0.0 1.0 abs 1
+DrivMan.Man.0.LatStep.0.SteerMode = Angle
+Env.StartTime.Year = 2014
+Env.StartTime.Month = 7
+Env.StartTime.Day = 1
+Env.StartTime.Hour = 12
+Env.StartTime.Min = 0
+Env.StartTime.Sec = 0
+Env.StartTime.DeltaUTC = 0.0
+Env.GNav.Active = 0
+Env.Temperature = 20.0
+Env.AirDensity = 1.205
+Env.AirPressure = 1.013
+Env.AirHumidity = 60
+Env.SolarRadiation = 400.0
+Env.Sun.Position = angleDefinition
+Env.Sun.Azimuth = 45.0
+Env.Sun.Elevation = 45.0
+Env.Cloud.Kind = simple
+Env.Cloud.Height = 800
+Env.Cloud.Intensity = 0.2
+Env.Cloud.Velocity = 10
+Env.Cloud.Angle = 45
+Env.FogActive = 0
+Env.VisRangeInFog = 10000
+Env.FogUseSkyColor = 0
+Env.FogColor = 0.5 0.5 0.5
+Env.Precipitation.Type = None
+Env.Wind.Kind = none
+Env.Wind.Velocity = 0.0
+Env.Wind.Angle = 0.0
+Env.Kind = Generic
+Env.Temp.Offset_Elev = -0.0065
+Env.Temp.Offset_sRoad.Amplify = 1.0
+Env.Temp.Offset_sRoad.On = 0
+Env.Temp.Offset_Time.Amplify = 1.0
+Env.Temp.Offset_Time.On = 1
+Env.Temp.Offset_Time:
+	0.0 -2.0
+	3.0 -2.5
+	6.0 -2.7
+	7.5 -2.7
+	9.0 -2.5
+	10.0 -2.3
+	11.0 -1.6
+	12.0 0.0
+	13.0 1.4
+	14.0 2.1
+	15.5 2.5
+	17.0 2.2
+	18.0 1.7
+	19.0 1.1
+	20.0 0.2
+	21.0 -0.6
+	22.0 -1.1
+	23.0 -1.6
+	24.0 -2.0
+Env.Settings.Commands:
+Env.nEvent = 0
+Driver.Info = Driver parametrization saved in Test Run
+Driver.Mode = std
+Driver.MultiStep = 1
+Driver.Course.LapDriving = 1
+Driver.Course.CornerCutCoef = 0.00
+Driver.Course.ApexShiftCoef = 0.0
+Driver.Course.CornerRoundCoef = 0.0
+Driver.Course.ShapeCoef = 1.0
+Driver.Course.PylonShiftFdCoef = 0.1
+Driver.Course.PylonShiftBkCoef = 0.1
+Driver.Acc.GGExp:
+	50 1.0 1.0
+Driver.Acc.axMax = 3.0
+Driver.Acc.axMin = -4.0
+Driver.Acc.ayMax = 4.0
+Driver.Acc.UseVelDepend = 0
+Driver.Acc.Factor.Accel = 1.0
+Driver.Acc.Factor.Decel = 1.0
+Driver.Acc.Factor.Lateral = 0.95
+Driver.Vel.CruisingSpeed = 150.0
+Driver.Vel.dtMinAccelDecel = 4
+Driver.Vel.Random.Amp = 0.0
+Driver.Vel.Random.Freq = 1.0
+Driver.Vel.LatInclFromRoad = 1
+Driver.Vel.MinimumSpeed = 1.0
+Driver.Long.Active = 1
+Driver.Long.TractionControl = 1
+Driver.Long.dtAccBrake = 0.5
+Driver.Long.dtAccBrakeKind = 0
+Driver.Long.DevMax = 0.0
+Driver.Long.tReact = 0.0
+Driver.Long.SmoothCoef = 0.0
+Driver.Long.SmoothThrottleLimit = 1.0
+Driver.Long.AccuracyCoef = 1
+Driver.Long.Rally.BrakeSlipCoef =
+Driver.Long.Rally.SideSlipCoef =
+Driver.Long.Rally.Active = 0
+Driver.Long.DriveCycle.Coef = 0
+Driver.Long.DriveCycle.Tol = 0
+Driver.Long.DragTorqueBraking = 0
+Driver.Long.ThrottleVelRelease = 10.0
+Driver.Long.ThrottleVelPush = 10.0
+Driver.Long.BrakeVelRelease = 10.0
+Driver.Long.BrakeVelPush = 10.0
+Driver.Long.ActuatorAccMax = 1000.0
+Driver.Long.ThrottleAmp = 1.0
+Driver.Long.BrakeAmp = 1.0
+Driver.Long.ClutchAmp = 1.0
+Driver.Long.dtSwitchGear = 0.0
+Driver.Long.Road3DRedCoef = 0.0
+Driver.Lat.Active = 1
+Driver.Lat.RiderRollType = 3
+Driver.Lat.RiderRollAmplify = 1.0
+Driver.Lat.DevMax = 0.0
+Driver.Lat.tReact = 0.0
+Driver.Lat.DevProReact =
+Driver.Lat.tDwell =
+Driver.Lat.StAHandOverHand =
+Driver.Lat.tHandOverHand =
+Driver.Lat.AccuracyCoef = 1.0
+Driver.Lat.StTorqueRequestSensitivity =
+Driver.Lat.StTorqueRequestCompCoef =
+Driver.Lat.StWhlAngleMax = 630
+Driver.Lat.StWhlAngleVelMax = 500
+Driver.Lat.StWhlAngleAccMax = 3000.0
+Driver.Lat.StWhlTorqueMax = 20.0
+Driver.Lat.StWhlTorqueVelMax = 1000.0
+Driver.Lat.SteeringAmp = 1.0
+Driver.DecShift.UseBrakePark = 0
+Driver.DecShift.tSwitchGear = 0.0
+Driver.DecShift.AsymClutch = 0.0
+Driver.DecShift.AsymClutchDown = 0.0
+Driver.DecShift.AsymShift = 0.0
+Driver.DecShift.tSSNeutralGear =
+Driver.DecShift.nEngine.Limits:
+	1500 4000
+Driver.DecShift.nEngine.Shift:
+	2000 3000
+Driver.Consider.SpeedLimit = 1
+Driver.Consider.StopMarker = 1
+Driver.Consider.TrfLight = 1
+Driver.Consider.Traffic = 0
+Driver.Traffic.Overtake = 0
+Driver.Traffic.TimeGapMin = 1.8
+Driver.Traffic.TimeGapMax = 5.0
+Driver.Traffic.DistMin = 6.0
+Driver.Traffic.DistMax = 250.0
+Driver.Traffic.EcoCoef = 0.75
+Driver.Traffic.Overtake.Rate = 1.0
+Driver.Traffic.Overtake.dSpeedMin = 10.0
+Driver.Traffic.Overtake.Multilane = 1
+Driver.Traffic.Ongoing.FollowVelThresh = 60.0
+Driver.Traffic.Ongoing.OvertakeVelDiff = 20.0
+Driver.Traffic.Overtake.SetIndicator = 1
+Driver.Percept.nObjMax = 4
+Driver.Percept.nLanesMax = 3
+Driver.Percept.UpdRate = 100
+Driver.DecShift.nEngine.MaxSpeed:
+	3000 4000
+	5000 6000
+Driver.DecShift.nEngine.MaxSpeed.UserDefined = 0
+Driver.Acc.VelDepend:
+	20.00 8.17 -11.97 8.98
+	30.00 8.12 -11.97 9.21
+	40.00 7.99 -11.97 9.44
+	50.00 7.69 -11.99 9.68
+	60.00 6.99 -12.02 9.92
+Driver.Acc.VelDepend.UserDefined = 0
+Driver.OutSdcv = 0
+Driver.Knowl.N = 0
+Traffic.SpeedUnit = ms
+Traffic.IFF.FName =
+Traffic.IFF.Time.Name = Time
+Traffic.GenDriverBehavior.FName = Default
+Traffic.0.Name = T00
+Traffic.0.Info:
+	Generic traffic object
+Traffic.0.DetectMask = 1 1
+Traffic.0.UpdRate = 200
+Traffic.0.AutoDrv.UpdRate = 200
+Traffic.0.Lighting = 0
+Traffic.0.FreeMotion = 0
+Traffic.0.TrailerName =
+Traffic.0.Template.FName = 1_Vehicles/IPG_CompanyCar_2018_Blue
+Traffic.0.AutoDriver.FName = Car_HDM_Normal
+Traffic.0.Routing.Type = Route
+Traffic.0.Routing.ObjId = 2
+Traffic.0.StartPos.Type = Route
+Traffic.0.StartPos.ObjId = 2
+Traffic.0.StartPos = 0.0 0.0
+Traffic.0.StartPos.Orientation.Type = Relative
+Traffic.0.StartPos.Orientation = 0.0 0.0 0.0
+Traffic.0.nMan = 1
+Traffic.0.Man.Start.Velocity = 5
+Traffic.0.Man.TreatAtEnd = FreezePos
+Traffic.0.Man.0.nLongSteps = 1
+Traffic.0.Man.0.nLatSteps = 1
+Traffic.0.Man.0.CombinedSteps = 1
+Traffic.0.Man.0.MaxExec = 1
+Traffic.0.Man.0.ConsiderDomain = own
+Traffic.0.Man.0.Transition.Interrupt = self
+Traffic.0.Man.0.Transition.EndCond = end
+Traffic.0.Man.0.Transition.SimultanStart = end
+Traffic.0.Man.0.LongStep.0.Limit = t {}
+Traffic.0.Man.0.LongStep.0.Dyn = auto 5
+Traffic.0.Man.0.LatStep.0.Limit = t {}
+Traffic.0.Man.0.LatStep.0.Dyn = auto
+Traffic.N = 1
+Traffic.SmartGen.Mode = 0 0 0
+DrivMan.OW.Active = 0
+DrivMan.OW.Quantities =
+DrivMan.OW.StartGearNo = 1
+DrivMan.OW.StartVelocity =
+DrivMan.OW.GasMax = 0.5
+DrivMan.OW.RefCh = Time
+DrivMan.OW.ConsiderRoadSigns = 0
+DrivMan.OW.sRoute.Offset = 0
+ErrorClass.0.Action = abort
+ErrorClass.0.Save = 0
+ErrorClass.0.WarningLimit = 3 5
+ErrorClass.1.Action = abort
+ErrorClass.1.Save = 0
+ErrorClass.1.WarningLimit = 3 5
+ErrorClass.2.Action = abort
+ErrorClass.2.Save = 0
+ErrorClass.2.WarningLimit = 3 5
+ErrorClass.3.Action = abort
+ErrorClass.3.Save = 0
+ErrorClass.3.WarningLimit = 3 5
+ErrorClass.4.Action = abort
+ErrorClass.4.Save = 0
+ErrorClass.4.WarningLimit = 3 5
+ErrorClass.5.Action = abort
+ErrorClass.5.Save = 0
+ErrorClass.5.WarningLimit = 3 5
+ErrorClass.6.Action = abort
+ErrorClass.6.Save = 0
+ErrorClass.6.WarningLimit = 10 5
+ErrorClass.7.Action = abort
+ErrorClass.7.Save = 0
+ErrorClass.7.WarningLimit = 3 5
+ErrorClass.10.Action = abort
+ErrorClass.10.Save = 0
+ErrorClass.10.WarningLimit = 3 5
+ErrorClass.11.Action = abort
+ErrorClass.11.Save = 0
+ErrorClass.11.WarningLimit = 3 5

@@ -1,0 +1,393 @@
+#INFOFILE1.1 (UTF-8) - Do not remove this line!
+TestRig.StartTime1970Str = 2025-05-08 16:43:24
+TestRig.StartTime1970 = 1746690204
+CarMaker.Library = win64 14.0.1 #1
+CarMaker.Compiled = jetbrains@05dcd26e64f8 2025-01-28 10:45:59
+CarMaker.CompileFlags:
+	-m64 -O3 -DNDEBUG -DWIN32 -DWIN64 -DCM_NUMVER=140001 -DCM_BUILD  -Wall -Wimplicit -Wmissing-prototypes -D__USE_MINGW_ANSI_STDIO -DUNICODE -Wlogical-op -Wno-address-of-packed-member -DCM_FMU
+CarMaker.Version = 14.0.1
+CarMaker.Version.MatSupp = 14.0.1
+CarMaker.Version.Apo = 2.3.2
+CarMaker.Version.Info = 2.0.3
+CarMaker.Version.MIO = unknown
+CarMaker.Version.Driver = 14.0.1
+CarMaker.Version.Road = 14.0.1
+CarMaker.Version.Tire = 9.1.1
+Driver.Version = 14.0.1
+Driver.ParamId = 12000000
+Driver.ErrorId = 8000000
+Driver.LearnPhaseId = 8100000
+Driver.Info = (@@)IPGDriver win64 14.0.1 2025-01-24
+Driver.CompileTime = 25/01/24 09:06:57
+Driver.CompileBy = jetbrains
+Driver.CompileSystem = eecdfd74d919
+Driver.CompileFlags = win-gcc-11.3 -Wall -DWIN32 -DWIN64 -DUNICODE -DDLLEXP= -I../lib/lock/win64 -I../lib/core/win64/include -m64 -I/opt/ipg/carmaker/linux64/include/ -O3 -DNDEBUG   -D_GNU_SOURCE
+Driver.BuiltVersion = 6
+Environment.Models:
+	MyEnvironment       	v1 (compat. v1)
+	Generic             	v1 (compat. v1)
+PTEngineCU.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Basic               	v1 (compat. v1)
+PTEngine.Models:
+	MyModel             	v1 (compat. v1)
+	Sherpa              	v1 (compat. v1)
+	DVA                 	v1 (compat. v1)
+	Mapping             	v1 (compat. v1)
+	Linear              	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+PTMotorCU.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Basic               	v1 (compat. v1)
+PTMotor.Models:
+	MyModel             	v1 (compat. v1)
+	PMSM                	v1 (compat. v1)
+	Mapping             	v1 (compat. v1)
+	Starter             	v1 (compat. v1)
+PTTransmCU.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	DCT                 	v1 (compat. v1)
+	CVT                 	v1 (compat. v1)
+	Auto_DCT_AMT        	v1 (compat. v1)
+	Auto_Conv_AMT       	v1 (compat. v1)
+	Auto_AMT            	v1 (compat. v1)
+	Auto_Conv           	v1 (compat. v1)
+	Automatic           	v1 (compat. v1)
+PTClutch.Models:
+	MyModel             	v1 (compat. v1)
+	Closed              	v1 (compat. v1)
+	Open                	v1 (compat. v1)
+	DMF                 	v1 (compat. v1)
+	DVA                 	v1 (compat. v1)
+	Converter           	v1 (compat. v1)
+	Manual              	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+PTGearBox.Models:
+	MyModel             	v1 (compat. v1)
+	NoGearbox           	v1 (compat. v1)
+	DCT                 	v1 (compat. v1)
+	CVT                 	v1 (compat. v1)
+	Auto_AMT            	v1 (compat. v1)
+	Auto_Conv           	v1 (compat. v1)
+	Automatic           	v1 (compat. v1)
+	DVA                 	v1 (compat. v1)
+	Manual              	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+PTDriveLine.Models:
+	MyModel             	v1 (compat. v1)
+	GenAxle             	v1 (compat. v1)
+	Gen4WD              	v1 (compat. v1)
+	Gen4x4              	v1 (compat. v1)
+	Gen2p2Rear          	v1 (compat. v1)
+	Gen2p2Front         	v1 (compat. v1)
+	GenRear             	v1 (compat. v1)
+	Gen4x2              	v1 (compat. v1)
+	GenFront            	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+PTDriveLineXWD.Models:
+	MyModel             	v1 (compat. v1)
+PowerTrain.Models:
+	MyModel             	v1 (compat. v1)
+	Modular             	v1 (compat. v1)
+	OpenXWD             	v1 (compat. v1)
+	HEV_PowerSplit      	v1 (compat. v1)
+	BEV                 	v1 (compat. v1)
+	HEV_Serial          	v1 (compat. v1)
+	HEV_AxleSplit       	v1 (compat. v1)
+	HEV_Parallel        	v1 (compat. v1)
+	Generic             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+PowerTrainXWD.Models:
+	MyModel             	v1 (compat. v1)
+PTControl.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	PowerSplit          	v1 (compat. v1)
+	Serial              	v1 (compat. v1)
+	Serial_Auto_AMT     	v1 (compat. v1)
+	BEV                 	v1 (compat. v1)
+	BEV_Auto_AMT        	v1 (compat. v1)
+	AxleSplit           	v1 (compat. v1)
+	AxleSplit_Auto_AMT  	v1 (compat. v1)
+	AxleSplit_P3        	v1 (compat. v1)
+	AxleSplit_P2        	v1 (compat. v1)
+	Parallel_P3         	v1 (compat. v1)
+	Parallel_P2         	v1 (compat. v1)
+	Parallel_P2_Auto_Conv	v1 (compat. v1)
+	Parallel_P1         	v1 (compat. v1)
+	Parallel_P1_Auto_Conv	v1 (compat. v1)
+	DVA                 	v1 (compat. v1)
+	Micro               	v1 (compat. v1)
+	Generic             	v1 (compat. v1)
+PTControlOSM.Models:
+	MyModel             	v1 (compat. v1)
+	Generic             	v1 (compat. v1)
+PTGenCoupling.Models:
+	MyModel             	v1 (compat. v1)
+	TrqVec              	v1 (compat. v1)
+	DVA_Locked          	v1 (compat. v1)
+	TrqSensing          	v1 (compat. v1)
+	Locked              	v1 (compat. v1)
+	Visco               	v1 (compat. v1)
+PTBatteryCU.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	LV_HV1              	v1 (compat. v1)
+	LV_HV1_HV2          	v1 (compat. v1)
+	LV                  	v1 (compat. v1)
+PTInverter.Models:
+	MyModel             	v1 (compat. v1)
+	Ideal               	v1 (compat. v1)
+	Mapping             	v1 (compat. v1)
+PTBattery.Models:
+	MyModel             	v1 (compat. v1)
+	Chen                	v1 (compat. v1)
+	BattECM             	v1 (compat. v1)
+PTPowerSupply.Models:
+	MyModel             	v1 (compat. v1)
+	LV_HV1_HV2          	v1 (compat. v1)
+	LV_HV1              	v1 (compat. v1)
+	LV                  	v1 (compat. v1)
+UniversalMC.Models:
+Steering.Models:
+	MyModel             	v1 (compat. v1)
+	Pfeffer             	v1 (compat. v1)
+	GenTorque           	v1 (compat. v1)
+	GenAngle            	v1 (compat. v1)
+	Classic             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Tire.Models:
+	RTTireWrap          	v1 (compat. v1)
+	MyModelSTI          	v1 (compat. v1)
+	MyModelCPI          	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	IPGTIRE             	v1 (compat. v1)
+	TameTire            	v1 (compat. v1)
+	FTire               	v1 (compat. v1)
+	TASS_MF             	v1 (compat. v1)
+	MF61                	v1 (compat. v1)
+	MF52                	v3 (compat. v2)
+	RTTire              	v3 (compat. v3)
+	Dummy               	v1 (compat. v1)
+TireCPMod.Models:
+	MyModel_FourPoster  	v1 (compat. v1)
+	MyModel             	v1 (compat. v1)
+Aero.Models:
+	MyModel             	v1 (compat. v1)
+	Coeff6x1            	v1 (compat. v1)
+	IPGCar              	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_FrcSystem.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Hookean             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_SpringSystem.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Hookean             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_Spring.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Hookean             	v1 (compat. v1)
+Susp_ParasiticEffects.Models:
+	MyStiffnessModel    	v1 (compat. v1)
+	MyFrictionModel     	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Hookean             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_TopMount.Models:
+	MyModel             	v1 (compat. v1)
+	KelvinVoigt         	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_DamperSystem.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_Damper.Models:
+	Adaptive            	v1 (compat. v1)
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Newtonian_wTopMnt   	v1 (compat. v1)
+	Newtonian           	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_BufferSystem.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_Buffer.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	SerialHookean       	v1 (compat. v1)
+	ParallelHookean     	v1 (compat. v1)
+	Hookean             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_StabiSystem.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Susp_Stabi.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	Hookean             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+SuspControl.Models:
+	SimpleSCU           	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+SuspExtFrcs.Models:
+	SuspComponent       	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+SuspEF_Spring.Models:
+SuspEF_Damper.Models:
+SuspEF_Buffer.Models:
+SuspEF_Stabi.Models:
+MCycleSuspFront.Models:
+MCycleSuspRear.Models:
+MCycleSuspFrcEl.Models:
+UserDriver.Models:
+	MyUserDriver        	v1 (compat. v1)
+VehicleControl.Models:
+	MyDigitalGearSelector	v1 (compat. v1)
+	MyModel             	v1 (compat. v1)
+	GenLongCtrl         	v1 (compat. v1)
+	GenLatCtrl          	v1 (compat. v1)
+	AccelCtrl           	v1 (compat. v1)
+VhclOperator.Models:
+	MyModel             	v1 (compat. v1)
+	IPGOperator         	v1 (compat. v1)
+SelectorCtrlMapping.Models:
+	MyModel             	v1 (compat. v1)
+	SelectorCtrlToDGS   	v1 (compat. v1)
+Brake.Models:
+	MyModel             	v1 (compat. v1)
+	OverrunFric         	v1 (compat. v1)
+	Overrun             	v1 (compat. v1)
+	Hyd                 	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+	NoBrake             	v1 (compat. v1)
+HydBrakeSystem.Models:
+	HydESPWrap          	v5 (compat. v5)
+	TrPresDistrib       	v1 (compat. v1)
+	HydIPB              	v1 (compat. v1)
+	HydESP              	v5 (compat. v5)
+	PresDistrib         	v1 (compat. v1)
+HydBrakeControl.Models:
+	MyModel             	v1 (compat. v1)
+	CM4SL               	v1 (compat. v1)
+	HydHIL              	v1 (compat. v1)
+	HydBasic            	v1 (compat. v1)
+AirBrakeSystem.Models:
+AirBrakeControl.Models:
+SuspKnC.Models:
+	_MyModel_AuxFMU     	v1 (compat. v1)
+	MyModel_FrcCpl_R    	v1 (compat. v1)
+	MyModel_FLR         	v1 (compat. v1)
+	MyModel_F           	v1 (compat. v1)
+	DoubleWishboneExtend	v1 (compat. v1)
+	DoubleWishbone_FrcCpl	v1 (compat. v1)
+	DoubleWishbone      	v1 (compat. v1)
+	TwistBeamExtend     	v1 (compat. v1)
+	TwistBeam           	v1 (compat. v1)
+	FourLinkModExtend   	v1 (compat. v1)
+	FourLinkExtend      	v1 (compat. v1)
+	FourLink_FrcCpl     	v1 (compat. v1)
+	FourLink            	v1 (compat. v1)
+	McPhersonExtend     	v1 (compat. v1)
+	McPherson_FrcCpl    	v1 (compat. v1)
+	McPherson           	v1 (compat. v1)
+SuspKnC_Kin.Models:
+	SemiTrailingArm     	v1 (compat. v1)
+	Crank               	v1 (compat. v1)
+	Sleeve              	v1 (compat. v1)
+	MapNL               	v4 (compat. v4)
+	Linear3D            	v1 (compat. v1)
+	Linear2D            	v1 (compat. v1)
+	Linear              	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+SuspKnC_Com.Models:
+	Displace2DFr2       	v1 (compat. v1)
+	Displace2DFr1       	v1 (compat. v1)
+	Displace1DFr2       	v1 (compat. v1)
+	DisplaceLinearFr2   	v1 (compat. v1)
+	DisplaceLinFr2      	v1 (compat. v1)
+	Displace1DFr1       	v1 (compat. v1)
+	DisplaceLinearFr1   	v1 (compat. v1)
+	DisplaceLinFr1      	v1 (compat. v1)
+	Coeff1DFr2          	v1 (compat. v1)
+	CoeffLinFr2         	v1 (compat. v1)
+	Coeff1DFr1          	v1 (compat. v1)
+	CoeffLinFr1         	v1 (compat. v1)
+	CoeffConstFr2       	v1 (compat. v1)
+	CoeffConstFr1       	v1 (compat. v1)
+	SetZero             	v1 (compat. v1)
+	Dummy               	v1 (compat. v1)
+Vehicle.Models:
+	MyCar               	v1 (compat. v1)
+Generic.Models:
+TrfFollow.Models:
+	HDM                 	v1 (compat. v1)
+	Generic             	v1 (compat. v1)
+TrfLaneChange.Models:
+	HDMbased            	v1 (compat. v1)
+Application.Version = CarMaker 14.0.1 - Car_Generic
+Application.BuildVersion = 5
+Application.CompileTime = 2025-01-28 11:06:46
+Application.CompileUser = jetbrains
+Application.CompileSystem = 05dcd26e64f8
+Application.CompileFlags:
+	-m64 -O3 -DNDEBUG -DWIN32 -DWIN64 -DCM_NUMVER=140001
+	-DMYMODELS -Wall -Wimplicit -Wmissing-prototypes
+	-D__USE_MINGW_ANSI_STDIO -DUNICODE -Wlogical-op
+	-Wno-address-of-packed-member -DCM4SL
+	-U__STRICT_ANSI__
+	-I../../../lib/ipc-api/win64/include -Wall
+	-malign-double -fomit-frame-pointer
+
+Application.Libs:
+	libcar4sl.a	CarMaker-Car win64 14.0.1 2025-01-28
+	libcarmaker4sl.a	CarMaker win64 14.0.1 2025-01-28
+	libipgdriver.a	IPGDriver win64 14.0.1 2025-01-24
+	libipgroad.a	IPGRoad win64 14.0.1 2025-01-24
+	libipgtire.a	IPGTire win64 9.1.1 2024-10-08
+
+Application.Version.Driver = 14.0.1
+Application.Version.Road = 14.0.1
+
+IO.Configs:
+
+ErrorClass.0.Text = General
+ErrorClass.0.Action = abort
+ErrorClass.0.Save = 0
+ErrorClass.0.WarnLimit = 0 0
+ErrorClass.1.Text = Initialization
+ErrorClass.1.Action = abort
+ErrorClass.1.Save = 0
+ErrorClass.1.WarnLimit = 0 0
+ErrorClass.2.Text = Simulation
+ErrorClass.2.Action = abort
+ErrorClass.2.Save = 1
+ErrorClass.2.WarnLimit = 0 0
+ErrorClass.3.Text = CycleTime
+ErrorClass.3.Action = abort
+ErrorClass.3.Save = 0
+ErrorClass.3.WarnLimit = 0 0
+ErrorClass.4.Text = Engine stalled
+ErrorClass.4.Action = abort
+ErrorClass.4.Save = 0
+ErrorClass.4.WarnLimit = 0 0
+ErrorClass.5.Text = Trailer Articulation Angle
+ErrorClass.5.Action = abort
+ErrorClass.5.Save = 0
+ErrorClass.5.WarnLimit = 0 0
+ErrorClass.6.Text = Hardware I/O
+ErrorClass.6.Action = abort
+ErrorClass.6.Save = 0
+ErrorClass.6.WarnLimit = 0 0
+ErrorClass.7.Text = GPUSensor
+ErrorClass.7.Action = abort
+ErrorClass.7.Save = 0
+ErrorClass.7.WarnLimit = 0 0
