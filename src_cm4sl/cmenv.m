@@ -1,7 +1,7 @@
 function cmenv (varargin)		% -*- Mode: Fundamental -*-
 % CMENV - Add CarMaker directories to the MATLAB search path.
 %
-    addpath(genpath('Scripts'))
+
     % CarMaker installation directory.
     if isempty(which('cmlocaldir'))
 	cminstdir = 'C:/IPG/carmaker/win64-14.1.1';
