@@ -98,3 +98,509 @@ SIMULATE	day7_final
 
 TIME	240.791
 SIM_END		day7_final	240.788s	2720.38m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 09:53:26
+TIME	0.001
+		Current random seed value = 1763686406
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	294.353
+SIM_END		day7_final	294.35s	3810.89m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 10:47:41
+TIME	0.001
+		Current random seed value = 1763689661
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	242.585
+SIM_END		day7_final	242.582s	3236.72m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 10:49:50
+TIME	0.001
+		Current random seed value = 1763689790
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	55.153
+SIM_END		day7_final	55.15s	662.535m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 10:50:15
+TIME	0.001
+		Current random seed value = 1763689815
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	64.353
+SIM_END		day7_final	64.35s	789.059m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 10:55:52
+TIME	0.001
+		Current random seed value = 1763690152
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	31.777
+ERROR		Vehicle leaves road at about x=3.16529, y=-40.2414 TireNo=1
+SIM_ABORT	day7_final	31.78s	128.925m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 10:57:25
+TIME	0.001
+		Current random seed value = 1763690245
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	93.314
+SIM_END		day7_final	93.311s	825.253m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 10:59:10
+TIME	0.001
+		Current random seed value = 1763690350
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	126.397
+SIM_END		day7_final	126.394s	841.082m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:31:38
+TIME	0.001
+		Current random seed value = 1763706698
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	9.777
+SIM_END		day7_final	9.774s	0.000119699m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:32:44
+TIME	0.001
+		Current random seed value = 1763706764
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	18.357
+SIM_END		day7_final	18.354s	229.05m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:35:23
+TIME	0.001
+		Current random seed value = 1763706923
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	18.940
+SIM_END		day7_final	18.937s	0.000105071m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:38:02
+TIME	0.001
+		Current random seed value = 1763707082
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	36.503
+SIM_END		day7_final	36.5s	0.000105755m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:38:46
+TIME	0.001
+		Current random seed value = 1763707126
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	6.615
+SIM_END		day7_final	6.612s	0.000103387m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:39:03
+TIME	0.001
+		Current random seed value = 1763707143
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	10.199
+ERROR		Vehicle leaves road at about x=115.519, y=-0.477188 TireNo=0
+SIM_ABORT	day7_final	10.202s	199.721m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:39:21
+TIME	0.001
+		Current random seed value = 1763707161
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	10.221
+ERROR		Vehicle leaves road at about x=115.434, y=-0.357148 TireNo=0
+SIM_ABORT	day7_final	10.224s	199.59m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:39:34
+TIME	0.001
+		Current random seed value = 1763707174
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	32.581
+SIM_END		day7_final	32.578s	72.3928m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:42:04
+TIME	0.001
+		Current random seed value = 1763707324
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	32.509
+SIM_END		day7_final	32.506s	531.897m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:42:33
+TIME	0.001
+		Current random seed value = 1763707353
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	14.984
+SIM_END		day7_final	14.981s	185.984m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:50:09
+TIME	0.001
+		Current random seed value = 1763707809
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	16.269
+SIM_END		day7_final	16.266s	204.041m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:52:27
+TIME	0.001
+		Current random seed value = 1763707947
+TIME	0.000
+SIMULATE	day7_final
+
+SIM_END		day7_final	0s	0m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 15:52:55
+TIME	0.001
+		Current random seed value = 1763707975
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	9.064
+SIM_END		day7_final	9.061s	104.331m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 16:13:28
+TIME	0.001
+		Current random seed value = 1763709208
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	57.076
+SIM_END		day7_final	57.073s	730.397m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 17:43:22
+TIME	0.001
+		Current random seed value = 1763714602
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 17:43:38
+TIME	0.001
+		Current random seed value = 1763714618
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 17:48:57
+TIME	0.001
+		Current random seed value = 1763714937
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:16:35
+TIME	0.001
+		Current random seed value = 1763716595
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:20:54
+TIME	0.001
+		Current random seed value = 1763716854
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:21:30
+TIME	0.001
+		Current random seed value = 1763716890
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:23:37
+TIME	0.001
+		Current random seed value = 1763717017
+TIME	0.000
+SIMULATE	day7_final
+
+ERROR		Embedded FARoadSensor Geo:  xyz (nan nan nan) not found on Road
+SIM_ABORT	day7_final	0.004s	4.85164e-10m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:24:47
+TIME	0.001
+		Current random seed value = 1763717087
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	4.643
+ERROR		Vehicle leaves road at about x=-37.4307, y=29.003 TireNo=0
+SIM_ABORT	day7_final	4.646s	43.9781m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:25:27
+TIME	0.001
+		Current random seed value = 1763717127
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	4.643
+ERROR		Vehicle leaves road at about x=-37.4307, y=29.003 TireNo=0
+SIM_ABORT	day7_final	4.646s	43.9781m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:26:33
+TIME	0.001
+		Current random seed value = 1763717193
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	4.643
+ERROR		Vehicle leaves road at about x=-37.4307, y=29.003 TireNo=0
+SIM_ABORT	day7_final	4.646s	43.9781m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:27:30
+TIME	0.001
+		Current random seed value = 1763717250
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.480
+ERROR		Vehicle leaves road at about x=-82.812, y=25.016 TireNo=1
+SIM_ABORT	day7_final	2.483s	7.636m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:28:48
+TIME	0.001
+		Current random seed value = 1763717328
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	4.643
+ERROR		Vehicle leaves road at about x=-37.4307, y=29.003 TireNo=0
+SIM_ABORT	day7_final	4.646s	43.9781m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:30:44
+TIME	0.001
+		Current random seed value = 1763717444
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:30:55
+TIME	0.001
+		Current random seed value = 1763717455
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:31:24
+TIME	0.001
+		Current random seed value = 1763717484
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:34:46
+TIME	0.001
+		Current random seed value = 1763717686
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:35:49
+TIME	0.001
+		Current random seed value = 1763717749
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:40:00
+TIME	0.001
+		Current random seed value = 1763718000
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:42:08
+TIME	0.001
+		Current random seed value = 1763718128
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	2.218
+ERROR		Vehicle leaves road at about x=-80.5832, y=25.5467 TireNo=0
+SIM_ABORT	day7_final	2.221s	7.47138m
+APPLICATION	CarMaker 14.1.1 - Car_Generic #5 (win64-14.1.1)
+COMPILED	jetbrains@2dc68d98a08b 2025-07-07 15:00:46
+ 
+		I/O Configuration: default
+SIM_START	day7_final	2025-11-21 18:43:04
+TIME	0.001
+		Current random seed value = 1763718184
+TIME	0.000
+SIMULATE	day7_final
+
+TIME	7.303
+SIM_END		day7_final	7.3s	79.6554m
