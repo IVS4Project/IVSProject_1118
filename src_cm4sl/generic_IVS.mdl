@@ -62,8 +62,8 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <dcterms:created xsi:type="dcterms:W3CDTF">2002-02-08T06:09:51Z</dcterms:created>
   <dc:creator>IPG</dc:creator>
   <cp:lastModifiedBy>User</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-22T17:38:05Z</dcterms:modified>
-  <cp:revision>7.196</cp:revision>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-22T17:39:56Z</dcterms:modified>
+  <cp:revision>7.197</cp:revision>
   <cp:version>R2024a</cp:version>
 </cp:coreProperties>
 
@@ -136,7 +136,7 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:7.196&gt;</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:7.197&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="LibraryLinkDisplay">none</P>
@@ -3569,7 +3569,7 @@ __MWOPC_PART_BEGIN__ /simulink/stateflow/chart_152.xml
     % otherVehicles: [X, Y, Vx, Vy, Ax, Ay, Yaw, Yawrate]
     % N_pts: 출력할 trajectory 점 개수
     % 출력: x_traj, y_traj - N_pts x 1 trajectory
-    %cdh git test
+    %git test
     
     driving_mission_info_out = driving_mission_info_in;
     mission_state = driving_mission_info_in.missionState;
