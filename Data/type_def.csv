@@ -5,6 +5,7 @@ DrivingMissionInfo,DrivingMissionInfo,struct,busDrivingMissionInfo,,,,,
 busDrivingMissionInfo,missionState,numeric,uint8,1,0,255,0,Current mission state
 busDrivingMissionInfo,tollgateLaneNumber,numeric,uint8,1,0,255,0,High pass lane number
 busDrivingMissionInfo,velReference,numeric,single,1,-1000,1000,0,Velocity Reference
+busDrivingMissionInfo,is_Optimal_Path,numeric,uint8,1,0,255,0,Whether the optimal path has been found
 
 ParkingMissionInfo,ParkingMIssionInfo,struct,busParkingMissionInfo,,,,,
 busParkingMissionInfo,parkingStartPos_X,numeric,single,1,-1000,1000,0,Parking start position X
@@ -37,8 +38,7 @@ busEgoVehicle,ego_Speed,numeric,single,1,0,300,0,Ego vehicle speed
 busEgoVehicle,ego_Accel,numeric,single,1,0,200,0,Ego vehicle accel
 
 MapData,MapData,struct,busMapData,,,,,
-busMapData,Route1,numeric,double,[237 2],-1000,1000,0,Route 1 waypoints
-busMapData,Route2,numeric,double,[230 2],-1000,1000,0,Route 2 waypoints
-busMapData,Route3,numeric,double,[223 2],-1000,1000,0,Route 3 waypoints
-busMapData,Route4,numeric,double,[27 2],-1000,1000,0,Route 4 waypoints
-busMapData,Route5,numeric,double,[15 2],-1000,1000,0,Route 5 waypoints
+busMapData,Route1,numeric,double,[283 2],-1000,1000,0,Route 1 waypoints
+busMapData,Route2,numeric,double,[275 2],-1000,1000,0,Route 2 waypoints
+busMapData,Route3,numeric,double,[266 2],-1000,1000,0,Route 3 waypoints
+busMapData,Route_Parking,numeric,double,[41 2],-1000,1000,0,Route Parking waypoints

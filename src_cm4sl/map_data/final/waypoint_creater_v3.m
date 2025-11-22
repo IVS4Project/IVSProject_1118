@@ -212,3 +212,50 @@ xlabel('X-coordinate');
 ylabel('Y-coordinate');
 grid on;
 hold off;
+
+%% --- Split global waypoints into route-wise arrays ---
+
+% Convert all_waypoints (cell of structs) into a single Nx3 numeric matrix:
+% [global_id, x, y]
+num_wp = numel(all_waypoints);
+wp_mat = zeros(num_wp, 3);
+
+for i = 1:num_wp
+    wp_mat(i,1) = all_waypoints{i}.id;
+    wp_mat(i,2:3) = all_waypoints{i}.waypoint;
+end
+
+% Sorting just in case (IDs must be ascending)
+wp_mat = sortrows(wp_mat, 1);
+
+%% Extract ranges
+
+% route1: ID 1 ~ 283
+route1_range = (wp_mat(:,1) >= 1  & wp_mat(:,1) <= 283);
+route1_waypoint = wp_mat(route1_range, 2:3);
+
+% route2: ID 284 ~ 558
+route2_range = (wp_mat(:,1) >= 284 & wp_mat(:,1) <= 558);
+route2_waypoint = wp_mat(route2_range, 2:3);
+
+% route3: ID 559 ~ 824
+route3_range = (wp_mat(:,1) >= 559 & wp_mat(:,1) <= 824);
+route3_waypoint = wp_mat(route3_range, 2:3);
+
+% parking route:
+% (1) 825 ~ 836
+% (2) 859 ~ 877
+parking_range = (wp_mat(:,1) >= 559 & wp_mat(:,1) <= 569) | ...
+                (wp_mat(:,1) >= 825 & wp_mat(:,1) <= 836) | ...
+                (wp_mat(:,1) >= 859 & wp_mat(:,1) <= 877);
+
+route_parking_waypoint = wp_mat(parking_range, 2:3);
+
+%% --- Save to MAT file ---
+save('filtered_waypoints.mat', ...
+    'route1_waypoint', ...
+    'route2_waypoint', ...
+    'route3_waypoint', ...
+    'route_parking_waypoint');
+
+disp('Saved filtered_waypoints.mat with all route arrays.');
