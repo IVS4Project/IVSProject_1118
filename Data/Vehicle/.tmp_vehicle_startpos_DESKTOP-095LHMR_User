@@ -635,7 +635,18 @@ AccelCtrl.ACC.DistCtrl.kd = 36.0
 AccelCtrl.ACC.DistCtrl.kv = 2.0
 AccelCtrl.ACC.SpdCtrl.kv = 13.0
 
-VehicleControl.1.Kind =
+VehicleControl.1.Kind = "GenLongCtrl "
+AEB.SwitchedOn = 1
+AEB.RefObjectSensorName = Vhcl.FrontRadar
+AEB.Decel_max = 6.0
+AEB.p = 0.001
+AEB.i = 3.0
+AEB.dist_min = 5.0
+AEB.t_wait = 5.0
+AEB.tau_B = 0.2
+FCW.SwitchedOn = 1
+FCW.tau_warnLevel1 = 2.0
+FCW.tau_warnLevel2 = 1.0
 
 VehicleControl.2.Kind =
 

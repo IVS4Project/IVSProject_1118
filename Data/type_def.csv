@@ -13,14 +13,15 @@ busParkingMissionInfo,parkingStartPos_Y,numeric,single,1,-1000,1000,0,Parking st
 busParkingMissionInfo,parkingDestinationPos_X,numeric,single,1,-1000,1000,0,Parking destination position X
 busParkingMissionInfo,parkingDestinationPos_Y,numeric,single,1,-1000,1000,0,Parking destination position Y
 busParkingMissionInfo,parkingDestinationYaw,numeric,single,1,-1000,1000,0,Parking destination Yaw
-busParkingMissionInfo,parkingMapBoundary_X1,numeric,single,1,-1000,1000,0,Parking map boundary X1
-busParkingMissionInfo,parkingMapBoundary_Y1,numeric,single,1,-1000,1000,0,Parking map boundary Y1
-busParkingMissionInfo,parkingMapBoundary_X2,numeric,single,1,-1000,1000,0,Parking map boundary X2
-busParkingMissionInfo,parkingMapBoundary_Y2,numeric,single,1,-1000,1000,0,Parking map boundary Y2
-busParkingMissionInfo,parkingMapBoundary_X3,numeric,single,1,-1000,1000,0,Parking map boundary X1
-busParkingMissionInfo,parkingMapBoundary_Y3,numeric,single,1,-1000,1000,0,Parking map boundary Y3
-busParkingMissionInfo,parkingMapBoundary_X4,numeric,single,1,-1000,1000,0,Parking map boundary X4
-busParkingMissionInfo,parkingMapBoundary_Y4,numeric,single,1,-1000,1000,0,Parking map boundary Y4
+busParkingMissionInfo,parkingMapBoundary_X_Min,numeric,single,1,-1000,1000,0,Parking map boundary X Min
+busParkingMissionInfo,parkingMapBoundary_X_Max,numeric,single,1,-1000,1000,0,Parking map boundary X Max
+busParkingMissionInfo,parkingMapBoundary_Y_Min,numeric,single,1,-1000,1000,0,Parking map boundary Y Min
+busParkingMissionInfo,parkingMapBoundary_Y_Max,numeric,single,1,-1000,1000,0,Parking map boundary Y MAX
+busParkingMissionInfo,isPathFound,numeric,uint8,1,0,255,0,whether the optimal parking path has been generated
+busParkingMissionInfo,parking_clear,numeric,uint8,1,0,255,0,Whether Parking is complete
+busParkingMissionInfo,dir,numeric,int8,1,-1,1,0,Forward: 1 Reverse: -1
+busParkingMissionInfo,LAD,numeric,single,1,0,100,0,Look ahead distance
+busParkingMissionInfo,y_LAD,numeric,single,1,0,100,0,Lateral offset when x is Look ahead distance
 
 CurrentLaneInfo,CurrentLaneInfo,struct,busCurrentLaneInfo,,,,,
 busCurrentLaneInfo,lane_Idx,numeric,uint8,1,0,255,0,Current lane number
@@ -42,3 +43,18 @@ busMapData,Route1,numeric,double,[283 2],-1000,1000,0,Route 1 waypoints
 busMapData,Route2,numeric,double,[275 2],-1000,1000,0,Route 2 waypoints
 busMapData,Route3,numeric,double,[266 2],-1000,1000,0,Route 3 waypoints
 busMapData,Route_Parking,numeric,double,[41 2],-1000,1000,0,Route Parking waypoints
+
+HybridAStarParam,HybridAStarParam,struct,busHybridAStarParam,,,,,
+busHybridAStarParam,xyResolution,numeric,single,1,0,10,0,XY grid resolution [m]
+busHybridAStarParam,yawResolution,numeric,single,1,0,3.14,0,Yaw grid resolution [rad] (10deg)
+busHybridAStarParam,stepSize,numeric,single,1,0,10,0,Arc length per motion primitive [m]
+busHybridAStarParam,R_min,numeric,single,1,0,20,0,Minimum turning radius [m]
+busHybridAStarParam,vehicleRadius,numeric,single,1,0,5,0,Ego vehicle collision radius [m]
+busHybridAStarParam,obsRadius,numeric,single,1,0,5,0,Obstacle circle radius [m]
+busHybridAStarParam,carLengthObs,numeric,single,1,0,10,0,Obstacle car length (rear reference) [m]
+busHybridAStarParam,reversePenalty,numeric,single,1,0,10,0,Cost multiplier for reverse driving
+busHybridAStarParam,steerSet,numeric,single,[3 1],-1,1,0,Normalized steering set (κ/κmax)
+busHybridAStarParam,maxIter,numeric,uint32,1,0,1000000,0,Maximum iteration count
+busHybridAStarParam,goalPosTol,numeric,single,1,0,5,0,Goal tolerance (position) [m]
+busHybridAStarParam,goalYawTol,numeric,single,1,0,3.14,0,Yaw tolerance [rad] (20deg)
+busHybridAStarParam,yawWeight,numeric,single,1,0,10,0,Heuristic weight for yaw difference
