@@ -1,4 +1,9 @@
 function opt_path = hybridAstar_main()
+% HYBRIDASTAR_MAIN
+%  - No toolbox
+%  - Simple Hybrid A* with kinematic car model (forward / reverse)
+%  - Obstacles are parked cars whose coordinates are REAR-BUMPER based.
+%  - Each obstacle car is modeled as TWO circles along its heading.
 
     %% 1. World 설정
     x_world_min = 5.5;
@@ -10,7 +15,7 @@ function opt_path = hybridAstar_main()
 
     % Start / Goal (world frame, [x, y, yaw(rad)])
     start_world = [5.5, -36.5, deg2rad(0)];
-    goal_world  = [16.25, -32.67, deg2rad(90)];
+    goal_world  = [12.55, -43.77,  deg2rad(90)];
 
     % 장애물: [x_rear, y_rear, heading_deg]  (rear bumper 기준!)
     obstacles = [7.3000,  -28.7000,   -90;
@@ -37,12 +42,12 @@ function opt_path = hybridAstar_main()
     %% 2. Hybrid A* 파라미터
     p = struct();
     p.xyResolution   = 0.5;         % [m] grid resolution
-    p.yawResolution  = deg2rad(10); % [rad]
+    p.yawResolution  = deg2rad(15); % [rad]
     p.stepSize       = 1.0;         % [m] arc length per motion primitive
     p.R_min          = 5.8;         % [m] 최소 회전반경
     % 차량/장애물 충돌 반경 (대략 값, 튜닝 가능)
-    p.vehicleRadius  = 1.5;         % [m] ego 차량 반경 (원 모델)
-    p.obsRadius      = 1.5;         % [m] 각 장애물 서클 반경
+    p.vehicleRadius  = 1.0;         % [m] ego 차량 반경 (원 모델)
+    p.obsRadius      = 1.0;         % [m] 각 장애물 서클 반경
     % 장애물 차량 길이 (rear 기준 좌표를 위해 필요)
     p.carLengthObs   = 4.47;        % [m] 장애물 차량 길이
     % 비용 관련
@@ -62,7 +67,7 @@ function opt_path = hybridAstar_main()
         return;
     end
 
-    opt_path = path; % [N x 4] : [x, y, yaw, dir(전진:1, 후진:-1)]
+    opt_path = path; % [N x 3] : [x, y, yaw]
 
     %% 4. 결과 플로팅
     figure; hold on; grid on; axis equal;
@@ -103,18 +108,18 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
     nyaw = floor(2*pi / p.yawResolution) + 1;
 
     % Pre-alloc
-    costList    = inf(nx, ny, nyaw);   % g-value
-    nodeIdList  = zeros(nx, ny, nyaw); % index of node in "nodes" array
-    closedList  = false(nx, ny, nyaw); % closed set flag
+    cost3d    = inf(nx, ny, nyaw);   % g-value
+    nodeId3d  = zeros(nx, ny, nyaw); % index of node in "nodes" array
+    closed3d  = false(nx, ny, nyaw); % closed set flag
 
     % Node struct template
     nodeTemplate = struct('x',0,'y',0,'yaw',0,...
                           'g',0,'h',0,'f',0,...
-                          'dir',1,...
+                          'dir',1,...    % +1 forward, -1 reverse
                           'parent',0,...
                           'ix',0,'iy',0,'iyaw',0);
 
-    nodes(1) = nodeTemplate;
+    nodes(1) = nodeTemplate; %#ok<AGROW>
     [ix,iy,iyaw] = world2grid(start(1), start(2), start(3), x_min, y_min, p.xyResolution, p.yawResolution);
 
     nodes(1).x    = start(1);
@@ -129,8 +134,8 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
     nodes(1).iy   = iy;
     nodes(1).iyaw = iyaw;
 
-    costList(ix,iy,iyaw)   = 0;
-    nodeIdList(ix,iy,iyaw) = 1;
+    cost3d(ix,iy,iyaw)   = 0;
+    nodeId3d(ix,iy,iyaw) = 1;
 
     openSet = 1; % store node indices
     success = false;
@@ -146,10 +151,10 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
         openSet(idxMin) = [];
 
         curNode = nodes(curId);
-        if closedList(curNode.ix, curNode.iy, curNode.iyaw)
+        if closed3d(curNode.ix, curNode.iy, curNode.iyaw)
             continue;
         end
-        closedList(curNode.ix, curNode.iy, curNode.iyaw) = true;
+        closed3d(curNode.ix, curNode.iy, curNode.iyaw) = true;
 
         % --- Goal 체크
         if isGoalReached(curNode, goal, p)
@@ -160,7 +165,7 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
         end
 
         % --- 이 노드에서 자식 노드 확장
-        children = CreateNode(curNode, p);
+        children = expandNode(curNode, p);
 
         for k = 1:numel(children)
             child = children(k);
@@ -180,13 +185,13 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
                                             x_min, y_min, ...
                                             p.xyResolution, p.yawResolution);
 
-            if closedList(ix_c,iy_c,iyaw_c)
+            if closed3d(ix_c,iy_c,iyaw_c)
                 continue;
             end
 
             g_new = curNode.g + child.cost; % arc length + penalty 포함
 
-            if g_new < costList(ix_c,iy_c,iyaw_c)
+            if g_new < cost3d(ix_c,iy_c,iyaw_c)
                 childNode = nodeTemplate;
                 childNode.x    = child.x;
                 childNode.y    = child.y;
@@ -200,18 +205,18 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
                 childNode.iy   = iy_c;
                 childNode.iyaw = iyaw_c;
 
-                if nodeIdList(ix_c,iy_c,iyaw_c) == 0
+                if nodeId3d(ix_c,iy_c,iyaw_c) == 0
                     % 새로 추가
                     nodes(end+1) = childNode; %#ok<AGROW>
                     newId = numel(nodes);
                 else
                     % 기존 노드 업데이트
-                    newId = nodeIdList(ix_c,iy_c,iyaw_c);
+                    newId = nodeId3d(ix_c,iy_c,iyaw_c);
                     nodes(newId) = childNode;
                 end
 
-                costList(ix_c,iy_c,iyaw_c)   = g_new;
-                nodeIdList(ix_c,iy_c,iyaw_c) = newId;
+                cost3d(ix_c,iy_c,iyaw_c)   = g_new;
+                nodeId3d(ix_c,iy_c,iyaw_c) = newId;
 
                 openSet(end+1) = newId; %#ok<AGROW>
             end
@@ -228,7 +233,7 @@ function [path, success] = hybridAstar_planner(start, goal, obstacles, space, p)
 end
 
 %% ================== Node expansion ==================
-function children = CreateNode(node, p)
+function children = expandNode(node, p)
     % motion primitive: κ ∈ {-1/R, 0, +1/R}, dir ∈ {+1, -1}
     R = p.R_min;
     kappa_max = 1.0 / R;
@@ -245,7 +250,7 @@ function children = CreateNode(node, p)
             dir = dirSet(d);
             s   = dir * ds;
 
-            [x_new, y_new, yaw_new] = BicycleKinematic(node.x, node.y, node.yaw, kappa, s);
+            [x_new, y_new, yaw_new] = integrateKinematic(node.x, node.y, node.yaw, kappa, s);
 
             % cost: arc length + reverse penalty
             baseCost = abs(ds);
@@ -265,9 +270,7 @@ function children = CreateNode(node, p)
 end
 
 %% ================== Kinematic integration ==================
-
-
-function [x_new, y_new, yaw_new] = BicycleKinematic(x, y, yaw, kappa, s)
+function [x_new, y_new, yaw_new] = integrateKinematic(x, y, yaw, kappa, s)
     % Bicycle-like kinematics with constant curvature
     if abs(kappa) < 1e-6
         % Straight motion
@@ -308,7 +311,7 @@ end
 %% ================== Collision check for motion ==================
 function flag = checkCollisionMotion(n1, n2, obstacles, space, p)
     % 중간 샘플 몇 개 찍어서 충돌 체크
-    nSamples = 7;
+    nSamples = 5;
     flag = false;
 
     % κ 추정 (n1→n2)
@@ -317,7 +320,7 @@ function flag = checkCollisionMotion(n1, n2, obstacles, space, p)
     for i = 0:nSamples
         t  = i / nSamples;
         s  = t * p.stepSize * sign(n2.dir); % 방향 고려
-        [x_s, y_s, ~] = BicycleKinematic(n1.x, n1.y, n1.yaw, ...
+        [x_s, y_s, ~] = integrateKinematic(n1.x, n1.y, n1.yaw, ...
                                            kappa_est, s);
 
         if checkCollisionPoint(x_s, y_s, obstacles, space, p)
@@ -390,7 +393,7 @@ function path = backtrackPath(nodes, goalId)
     path = tmp;
 end
 
-% 양자화 때림
+%% ================== World → Grid index ==================
 function [ix, iy, iyaw] = world2grid(x, y, yaw, x_min, y_min, res_xy, res_yaw)
     ix = floor((x - x_min) / res_xy) + 1;
     iy = floor((y - y_min) / res_xy) + 1;
@@ -398,6 +401,7 @@ function [ix, iy, iyaw] = world2grid(x, y, yaw, x_min, y_min, res_xy, res_yaw)
     iyaw = floor((yaw + pi) / res_yaw) + 1;
 end
 
+%% ================== wrapToPi (툴박스 없이 구현) ==================
 function ang = wrapToPi_local(ang)
     ang = mod(ang + pi, 2*pi) - pi;
 end
