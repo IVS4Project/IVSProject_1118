@@ -1,12 +1,12 @@
 #INFOFILE1.1 (UTF-8) - Do not remove this line!
-TestRun.Name = day7_final
+TestRun.Name = Parking_TC_011
 Vehicle = Kia_EV6
 Trailer =
 Tire.0 =
 Tire.1 =
 Tire.2 =
 Tire.3 =
-Road.FName = day7_final.rd5
+Road.FName = Parking_TC_011.rd5
 Vehicle.DriverTemplate.FName = TestRun
 Vehicle.KnowledgeTemplate.Name =
 Vehicle.UserDriver.Long.FName =
@@ -14,7 +14,7 @@ Vehicle.Routing.Type = Route
 Vehicle.Routing.ObjId = 85
 Vehicle.StartPos.Type = Route
 Vehicle.StartPos.ObjId = 85
-Vehicle.StartPos = 0 0
+Vehicle.StartPos = 833.950 0
 Vehicle.StartPos.Orientation.Type = Relative
 Vehicle.StartPos.Orientation = 0.0
 DrivMan.nMan = 1
