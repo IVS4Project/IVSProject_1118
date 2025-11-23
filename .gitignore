@@ -2,6 +2,7 @@
 Movie/
 SimOutput/
 resources/project/
+slprj/
 src/app_tmp*.c
 src/*.log
 src_cm4sl/app_tmp*.c
