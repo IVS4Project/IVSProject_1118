@@ -10,7 +10,7 @@ function opt_path = hybridAstar_main()
 
     % Start / Goal (world frame, [x, y, yaw(rad)])
     start_world = [5.5, -36.5, deg2rad(0)];
-    goal_world  = [16.25, -32.67, deg2rad(90)];
+    goal_world  = [16.25, -42.67, deg2rad(90)];
 
     % 장애물: [x_rear, y_rear, heading_deg]  (rear bumper 기준!)
     obstacles = [7.3000,  -28.7000,   -90;
