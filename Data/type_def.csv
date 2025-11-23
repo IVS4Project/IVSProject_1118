@@ -42,7 +42,7 @@ MapData,MapData,struct,busMapData,,,,,
 busMapData,Route1,numeric,double,[283 2],-1000,1000,0,Route 1 waypoints
 busMapData,Route2,numeric,double,[275 2],-1000,1000,0,Route 2 waypoints
 busMapData,Route3,numeric,double,[266 2],-1000,1000,0,Route 3 waypoints
-busMapData,Route_Parking,numeric,double,[41 2],-1000,1000,0,Route Parking waypoints
+busMapData,Route_Parking,numeric,double,[48 2],-1000,1000,0,Route Parking waypoints
 
 HybridAStarParam,HybridAStarParam,struct,busHybridAStarParam,,,,,
 busHybridAStarParam,xyResolution,numeric,single,1,0,10,0,XY grid resolution [m]

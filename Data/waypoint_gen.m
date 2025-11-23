@@ -5,20 +5,19 @@ load('filtered_waypoints.mat');
 %% Modify route_parking_waypoint
 route_parking_waypoint(24:end,1) = route_parking_waypoint(24:end,1) + 1;
 
-route_parking_waypoint(42, :) = [];
-% additional_points = [
-%     2.2, -35.00;
-%     2.5, -35.15;
-%     3.0, -35.20;
-%     3.2, -35.15;
-%     3.4, -35.10;
-%     3.6, -35.10;
-%     3.7, -35.05;
-%     3.8, -35.00;
-%     3.9, -35.00;
-% ];
-% 
-% route_parking_waypoint = [route_parking_waypoint; additional_points];
+route_parking_waypoint(41:42, :) = [];
+additional_points = [
+    2.2, -35.00;
+    2.5, -35.15;
+    3.0, -35.20;
+    3.2, -35.15;
+    3.4, -35.10;
+    3.7, -35.05;
+    3.9, -35.00;
+    4.2, -35.00;
+];
+
+route_parking_waypoint = [route_parking_waypoint; additional_points];
 
 %% Save to new file "waypoint_set.mat"
 save('waypoint_set.mat', ...
