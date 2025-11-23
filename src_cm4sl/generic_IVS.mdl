@@ -67,7 +67,7 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <dcterms:created xsi:type="dcterms:W3CDTF">2002-02-08T06:09:51Z</dcterms:created>
   <dc:creator>IPG</dc:creator>
   <cp:lastModifiedBy>User</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-23T07:05:24Z</dcterms:modified>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-23T07:08:45Z</dcterms:modified>
   <cp:revision>7.202</cp:revision>
   <cp:version>R2024a</cp:version>
 </cp:coreProperties>
@@ -31584,8 +31584,8 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="LoadSaveID" Class="char">3527</P>
           <P Name="Extents" Class="double">[1843.0, 741.0]</P>
           <P Name="ZoomFactor" Class="double">0.3</P>
-          <P Name="Offset" Class="double">[-458.91618499476363, 158.677535161314]</P>
-          <P Name="SceneRectInView" Class="double">[-458.91618499476363, 158.677535161314, 4914.666666666667, 1976.0]</P>
+          <P Name="Offset" Class="double">[-145.5828516614306, 232.01086849464764]</P>
+          <P Name="SceneRectInView" Class="double">[-145.5828516614306, 232.01086849464764, 4914.666666666667, 1976.0]</P>
         </Object>
         <Object ObjectID="8">
           <P Name="IsActive" Class="logical">0</P>

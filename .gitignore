@@ -1,7 +1,4 @@
 # 로그, 임시, 빌드, 실행 결과 폴더/파일 무시
-Data/
-!Data/ROAD/
-!Data/TESTRUN/
 Movie/
 SimOutput/
 resources/project/
