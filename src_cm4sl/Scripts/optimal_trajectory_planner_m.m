@@ -18,7 +18,7 @@ function [global_waypoints, driving_mission_info_out]  = optimal_trajectory_plan
     laneWidth = 3.5;
     dList = [-laneWidth, 0.0, laneWidth];
     vCandidates = [targetSpeed, targetSpeed*0.5, targetSpeed*0.3];
-    TimeList = 1.5:0.3:3.5;
+    TimeList = 1.5:0.2:3.5;
     N_pts = 30;
 
     if mission_state == 3
@@ -61,7 +61,7 @@ function [global_waypoints, driving_mission_info_out]  = optimal_trajectory_plan
                 [x_traj_tmp, y_traj_tmp] = frenetToGlobal(s_traj, d_traj, centerLine);
                 kappa = computeCurvature(x_traj_tmp, y_traj_tmp);
     
-                if ~checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, kappa, otherVehicles, centerLine, mission_state, tollgate_num)
+                if ~checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, kappa, otherVehicles, centerLine, mission_state, tollgate_num, T, N_pts)
                     continue;
                 end
     
@@ -77,7 +77,7 @@ function [global_waypoints, driving_mission_info_out]  = optimal_trajectory_plan
     if isempty(costs)
         x_traj = zeros(N_pts, 1);
         y_traj = zeros(N_pts, 1);
-        V_ref = single(4.5/3.6);
+        V_ref = single(5/3.6);
         driving_mission_info_out.is_Optimal_Path = uint8(0);
         % disp("no optimal path")
     else
@@ -245,7 +245,7 @@ function [x_traj, y_traj] = frenetToGlobal(s_traj, d_traj, centerLine)
 
 end
 
-function valid = checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, kappa, otherVehicles, centerLine, mission_state, tollgate_num)    
+function valid = checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, kappa, otherVehicles, centerLine, mission_state, tollgate_num, T, N_pts) 
     % 차선 조건
     laneWidth = 3.5;
     dList = [laneWidth, 0.0, -laneWidth];
@@ -255,7 +255,7 @@ function valid = checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, 
     V_MAX     = 80.0/3.6;
     A_MAX     = 20.0;
     KAPPA_MAX = 2.0;
-    COLL_DIST = 3.25;
+    COLL_DIST = 3.3;
     
     if mission_state == 2 && (abs(d_traj(end) - dList(tollgate_num)) > epsilon)
         valid = false;
@@ -284,11 +284,74 @@ function valid = checkConstraints(s_traj, d_traj, s_dot, d_dot, s_ddot, d_ddot, 
 
     % 충돌 확인
     [x_traj, y_traj] = frenetToGlobal(s_traj, d_traj, centerLine);
-    for i = 1:size(otherVehicles,1)
-        veh_x = otherVehicles(i,1);
-        veh_y = otherVehicles(i,2);
 
-        dist2 = (x_traj - veh_x).^2 + (y_traj - veh_y).^2;
+    % 2) ego yaw (heading) 추정 : 궤적 기울기 기반
+    dx = gradient(x_traj);
+    dy = gradient(y_traj);
+    ego_yaw_traj = atan2(dy, dx);   % N_pts x 1
+    
+    % 차량 직사각형 크기 (공통)
+    car_length = 4.5;    % [m]
+    car_width  = 2.0;    % [m]
+
+    for i = 1:size(otherVehicles,1)
+        obs_X_init = otherVehicles(i,1);
+        obs_Y_init = otherVehicles(i,2);
+
+        obs_Vx_init = otherVehicles(i,3);
+        obs_Vy_init = otherVehicles(i,4);
+
+        obs_Ax_init = otherVehicles(i,5);
+        obs_Ay_init = otherVehicles(i,6);
+
+        obs_yaw_init = otherVehicles(i,7);
+        obs_yawrate_init = otherVehicles(i,8);
+
+        obs_V_init = hypot(obs_Vx_init, obs_Vy_init);
+        obs_A_init = hypot(obs_Ax_init, obs_Ay_init);
+
+        obs_inist_state0 = [obs_X_init; obs_Y_init; obs_V_init; obs_A_init; obs_yaw_init; obs_yawrate_init];
+
+        T_pred  = T; % 예측할 길이
+        dt_pred = T / N_pts; % 예측 dt
+        N_pred  = round(T_pred/dt_pred); % Number of dt
+
+
+        % prediction rollout
+        % x_next = ctra_predict(x, y, v, a, psi, w, dt)
+
+        pred = zeros(6, N_pred + 1);
+        pred(:,1) = obs_inist_state0;
+
+        for j = 1:N_pred
+            pred(:,j+1) = ctra_predict(pred(:,j), dt_pred);
+        end
+
+        Xpred = pred(1,:);
+        Ypred = pred(2,:);
+        obs_yaw   = pred(5,:);
+        Nt = min(N_pts, size(pred,2));
+
+        for j = 1:Nt
+            Ce   = [x_traj(j);   y_traj(j)];   % ego center
+            Co   = [Xpred(j);    Ypred(j)];    % obs center
+            psi_e = ego_yaw_traj(j);
+            psi_o = obs_yaw(j);
+
+            % SAT 기반 OBB vs OBB 충돌 체크
+            isCollide = obbCollisionSAT(Ce, psi_e, Co, psi_o, car_length, car_width);
+
+            if isCollide
+                valid = false;
+                % 디버깅용 출력 (원하면 주석 처리 가능)
+                disp('Collision detected (SAT) at T = ');
+                disp(T);
+                return;
+            end
+        end
+
+        dist2 = (x_traj - Xpred).^2 + (y_traj - Ypred).^2;
+
         if any(dist2 < COLL_DIST^2)
             valid = false;
             return;
@@ -311,7 +374,7 @@ function cost = computeCost(s_jerk, d_jerk, T, di, sf_dot, df, TARGET_SPEED)
     
     K_avoid_center = 10000.0;
     K_firstLane = 0.0;
-    K_thridLane = 0.5;
+    K_thridLane = 0.0;
     
     
     J_lat = sum(d_jerk.^2);
@@ -339,4 +402,94 @@ function kappa = computeCurvature(x, y)
     ddy = gradient(dy);
     
     kappa = (dx .* ddy - dy .* ddx) ./ ((dx.^2 + dy.^2).^(3/2));
+end
+
+
+% ----------- CTRA function -----------
+function x_next = ctra_predict(x_curr, dt)
+    x = x_curr(1);
+    y = x_curr(2);
+    v = x_curr(3);
+    a = x_curr(4);
+    psi = x_curr(5);
+    w = x_curr(6);
+
+    eps = 1e-5;
+
+    if abs(w) < eps
+        v_next = v + a*dt;
+        s      = v*dt + 0.5*a*dt^2;
+        x_p    = x + s*cos(psi);
+        y_p    = y + s*sin(psi);
+        psi_n  = psi;
+        w_n    = w;
+        % disp('CTRV is done at yawrate of:')
+        % disp(w)
+    else
+        psi_n = psi + w*dt;
+
+        x_p = x ...
+          + (v/w)*(sin(psi_n) - sin(psi)) ...
+          + (a/w^2)*(cos(psi_n) - cos(psi) + w*dt*sin(psi_n));
+
+        y_p = y ...
+          - (v/w)*(cos(psi_n) - cos(psi)) ...
+          + (a/w^2)*(sin(psi_n) - sin(psi) - w*dt*cos(psi_n));
+
+        v_next = v + a*dt;
+        w_n    = w;
+    end
+
+    a_n = a;
+    x_next = [x_p; y_p; v_next; a_n; psi_n; w_n];
+end
+
+function isCollide = obbCollisionSAT(Ce, psi_e, Co, psi_o, car_length, car_width)
+    % Ce   : ego center [2x1]
+    % psi_e: ego yaw [rad]
+    % Co   : obs center [2x1]
+    % psi_o: obs yaw [rad]
+    % car_length, car_width : 공통 크기 (둘 다 동일하다고 가정)
+
+    % half-extent
+    hx_e = car_length/2;
+    hy_e = car_width /2;
+    hx_o = car_length/2;
+    hy_o = car_width /2;
+
+    % ego local axes (a0: forward, a1: left)
+    a0 = [cos(psi_e); sin(psi_e)];
+    a1 = [-sin(psi_e); cos(psi_e)];
+
+    % obs local axes (b0: forward, b1: left)
+    b0 = [cos(psi_o); sin(psi_o)];
+    b1 = [-sin(psi_o); cos(psi_o)];
+
+    % center difference
+    d = Co - Ce;
+
+    % test axes: A의 두 축, B의 두 축
+    axes_to_test = [a0, a1, b0, b1]; % 2 x 4
+
+    % SAT: 어느 한 축에서라도 분리되면 충돌 X
+    for k = 1:4
+        L = axes_to_test(:,k);   % 현재 검사 축
+        
+        % 센터 간 투영 거리
+        dist = abs(dot(d, L));
+        
+        % ego 직사각형 투영 half-range
+        r_e = hx_e * abs(dot(a0, L)) + hy_e * abs(dot(a1, L));
+        % obs 직사각형 투영 half-range
+        r_o = hx_o * abs(dot(b0, L)) + hy_o * abs(dot(b1, L));
+        
+        if dist > (r_e + r_o)
+            % 이 축에서는 분리됨 → 두 직사각형은 겹치지 않음
+            isCollide = false;
+            return;
+        end
+    end
+
+    % 어느 축에서도 분리되지 않았으면 → overlap → 충돌
+    isCollide = true;
 end
